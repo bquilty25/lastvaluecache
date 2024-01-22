@@ -13,44 +13,53 @@ knitr::opts_chunk$set(
 )
 ```
 
-# lastvalues
+# lastvaluecache
 
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
-[![CRAN status](https://www.r-pkg.org/badges/version/lastvalues)](https://CRAN.R-project.org/package=lastvalues)
+[![CRAN status](https://www.r-pkg.org/badges/version/lastvaluecache)](https://CRAN.R-project.org/package=lastvaluecache)
 <!-- badges: end -->
 
-The goal of lastvalues is to ...
+The goal of `lastvaluecache` is to provide an efficient way to cache the results of the last evaluated expressions in R. This is particularly useful for preserving the outputs of computationally expensive operations. The package allows users to customize the number of cached values and easily retrieve them without having to recompute.
 
 ## Installation
 
 You can install the development version of lastvalues like so:
 
 ``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+# Install development version from GitHub
+# install.packages("devtools")
+devtools::install_github("bquilty25/lastvaluecache")
 ```
 
 ## Example
 
 This is a basic example which shows you how to solve a common problem:
 
-```{r example}
-library(lastvalues)
-## basic example code
+```{r example, eval=F}
+library(lastvaluecache)
+
+# Run R code as usual
+2 + 2
+exp(1)
+sin(pi / 2)
+
+# Check the cached `.Last.value` objects
+last_values
+
+# > last_values
+# [[1]]
+# [1] 4
+# 
+# [[2]]
+# [1] 2.718282
+# 
+# [[3]]
+# [1] 1
+
+# Set the maximum number of cached values
+setMaxCachedValues(5)
+
+# Get the maximum number of cached values
+max_values <- getMaxCachedValues()
 ```
-
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
-
-```{r cars}
-summary(cars)
-```
-
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.
-
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.

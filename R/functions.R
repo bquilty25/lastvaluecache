@@ -57,8 +57,5 @@ setMaxCachedValues <- function(num) {
 #' @return The currently set maximum number of last values to cache.
 #' @export
 getMaxCachedValues <- function() {
-  # Function implementation
-}
-getMaxCachedValues <- function() {
   return(getOption("max_cached_values"))
 }
