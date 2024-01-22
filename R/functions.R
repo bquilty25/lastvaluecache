@@ -1,4 +1,4 @@
-
+options(max_cached_values = 3)
 #' Add Last Value to Cache List
 #'
 #' Adds the given value to a globally accessible list which is meant to store the last evaluated values.
