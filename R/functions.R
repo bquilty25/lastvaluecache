@@ -1,5 +1,3 @@
-# Set the default maximum number of last values to cache
-options(max_cached_values = 3)
 
 #' Add Last Value to Cache List
 #'
@@ -59,3 +57,7 @@ setMaxCachedValues <- function(num) {
 getMaxCachedValues <- function() {
   return(getOption("max_cached_values"))
 }
+
+eval(addLastValueToList)
+eval(setMaxCachedValues)
+eval(getMaxCachedValues)
