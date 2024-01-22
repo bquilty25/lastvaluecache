@@ -57,7 +57,3 @@ setMaxCachedValues <- function(num) {
 getMaxCachedValues <- function() {
   return(getOption("max_cached_values"))
 }
-
-eval(addLastValueToList)
-eval(setMaxCachedValues)
-eval(getMaxCachedValues)
