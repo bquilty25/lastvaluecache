@@ -1,9 +1,14 @@
-.onLoad <- function(libname = find.package("lastvaluecache"), pkgname = "lastvaluecache"){
+.onLoad <- function(libname, pkgname) {
+    # Ensure that 'last_values' and 'max_length' are initialized before the package is loaded.
+    if(!exists("last_values", envir = .GlobalEnv)){
+      assign("last_values", list(), envir = .GlobalEnv)
+    }
+    if(!exists("max_length", envir = .GlobalEnv)){
+      assign("max_length", 3, envir = .GlobalEnv)
+    }
 
-  # Example functions to be run on load
-  addLastValueToList(42)       # Assuming this function has no side effects
-  setMaxCachedValues(3)        # Set a default for max cached values
+    # Now that we have ensured 'last_values' and 'max_length' exist, we can safely use them.
+    # Here we might run a check or set them to a default state if needed.
 
-  # Consider printing a message to inform the user that functions are being run
-  message("Package LastValueCache loaded. Default max cached values set to 3.")
+    message("Package LastValueCache loaded with default settings.")
 }
