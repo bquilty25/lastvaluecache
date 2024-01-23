@@ -27,14 +27,6 @@ addLastValueToList <- function(value) {
   }
 }
 
-# Register the addLastValueToList function to be called after every top-level expression
-addTaskCallback(function(expr, value, ok, visible) {
-  if (ok) {
-    addLastValueToList(.Last.value)
-  }
-  return(TRUE)
-}, name = "cacheLastValue")
-
 #' Set Maximum Number of Cached Values
 #'
 #' Sets the maximum number of last values to cache.
