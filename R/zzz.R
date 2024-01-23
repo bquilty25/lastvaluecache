@@ -22,6 +22,6 @@
   NULL
   NULL
 
-  invisible(last_values)
+  invisible(.Last.value.cache)
 }
 

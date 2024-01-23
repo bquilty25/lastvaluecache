@@ -12,14 +12,14 @@ options(max_cached_values = 3)
 #' @export
 addLastValueToList <- function(value) {
   # Access the global '.Last.value.cache' list
-  if (!exists("last_values", envir = .GlobalEnv)) {
+  if (!exists(".Last.value.cache", envir = .GlobalEnv)) {
     .Last.value.cache <<- list()
   }
 
   max_length <- getOption("max_cached_values")
 
   # Append the '.Last.value' to '.Last.value.cache'
-  last_values <<- c(.Last.value.cache, list(value))
+  .Last.value.cache <<- c(.Last.value.cache, list(value))
 
   # Keep only the last 'max_length' values
   while (length(.Last.value.cache) > max_length) {
