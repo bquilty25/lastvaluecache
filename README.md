@@ -56,3 +56,7 @@ setMaxCachedValues(5)
 # Get the maximum number of cached values
 max_values <- getMaxCachedValues()
 ```
+
+## Acknowledgements
+Thanks to Nick Davies for the inspiration and Pratik Gupte for checking over the package.
+
