@@ -17,5 +17,11 @@
     }
     return(TRUE)
   }, name = "cacheLastValue")
+
+  NULL
+  NULL
+  NULL
+
+  invisible(last_values)
 }
 
