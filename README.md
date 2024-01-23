@@ -15,6 +15,8 @@ useful for preserving the outputs of computationally expensive
 operations. The package allows users to customize the number of cached
 values and easily retrieve them without having to recompute.
 
+**Warning: caching too many large objects will use up a lot of memory.**
+
 ## Installation
 
 You can install the development version of lastvaluecache like so:
