@@ -24,7 +24,7 @@ The goal of `lastvaluecache` is to provide an efficient way to cache the results
 
 ## Installation
 
-You can install the development version of lastvalues like so:
+You can install the development version of lastvaluecache like so:
 
 ``` r
 # Install development version from GitHub
@@ -45,9 +45,9 @@ exp(1)
 sin(pi / 2)
 
 # Check the cached `.Last.value` objects
-last_values
+.Last.value.cache
 
-# > last_values
+# > .Last.value.cache
 # [[1]]
 # [1] 4
 # 

@@ -11,19 +11,19 @@ options(max_cached_values = 3)
 #' @importFrom stats setNames
 #' @export
 addLastValueToList <- function(value) {
-  # Access the global '.Last_value_cache' list
+  # Access the global '.Last.value.cache' list
   if (!exists("last_values", envir = .GlobalEnv)) {
-    .Last_value_cache <<- list()
+    .Last.value.cache <<- list()
   }
 
   max_length <- getOption("max_cached_values")
 
-  # Append the '.Last.value' to '.Last_value_cache'
-  last_values <<- c(.Last_value_cache, list(value))
+  # Append the '.Last.value' to '.Last.value.cache'
+  last_values <<- c(.Last.value.cache, list(value))
 
   # Keep only the last 'max_length' values
-  while (length(.Last_value_cache) > max_length) {
-    .Last_value_cache <<- .Last_value_cache[-1]  # Remove the oldest (first) value
+  while (length(.Last.value.cache) > max_length) {
+    .Last.value.cache <<- .Last.value.cache[-1]  # Remove the oldest (first) value
   }
 }
 

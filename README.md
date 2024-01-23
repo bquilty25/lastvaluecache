@@ -38,7 +38,7 @@ exp(1)
 sin(pi / 2)
 
 # Check the cached `.Last.value` objects
-.Last_value_cache
+.Last.value.cache
 
 # > .Last_value_cache
 # [[1]]
