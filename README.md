@@ -7,8 +7,6 @@
 
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
-[![CRAN
-status](https://www.r-pkg.org/badges/version/lastvaluecache)](https://CRAN.R-project.org/package=lastvaluecache)
 <!-- badges: end -->
 
 The goal of `lastvaluecache` is to provide an efficient way to cache the
@@ -19,7 +17,7 @@ values and easily retrieve them without having to recompute.
 
 ## Installation
 
-You can install the development version of lastvalues like so:
+You can install the development version of lastvaluecache like so:
 
 ``` r
 # Install development version from GitHub
@@ -40,9 +38,9 @@ exp(1)
 sin(pi / 2)
 
 # Check the cached `.Last.value` objects
-last_values
+.Last_value_cache
 
-# > last_values
+# > .Last_value_cache
 # [[1]]
 # [1] 4
 # 
